@@ -1,4 +1,5 @@
-﻿using BigSchool.Models;
+﻿using BigSchool.DTOs;
+using BigSchool.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -33,10 +34,5 @@ namespace BigSchool.Controllers
 
             return Ok();
         }
-    }
-
-    public class AttendanceDTOs
-    {
-        public int CourseId { get; internal set; }
     }
 }

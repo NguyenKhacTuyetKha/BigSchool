@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BigSchool.DTOs
+namespace BigSchool.ViewModel
 {
-    public class AttendaceDTOs
+    public class FutureDateAttribute
     {
-        public int CourseId { get; set; }
     }
 }
