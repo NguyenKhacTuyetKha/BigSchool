@@ -20,7 +20,7 @@ namespace BigSchool.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Follow(FollowingDTOs followingDTOs)
+        public IHttpActionResult Follow(FollowingDto followingDTOs)
         {
             var userId = User.Identity.GetUserId();
             if (_dbContext.Followings.Any(f => f.FollowerId == userId && f.FollowerId == followingDTOs.FolloweeId))

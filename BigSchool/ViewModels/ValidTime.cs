@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 
-namespace BigSchool.ViewModel
+namespace BigSchool.ViewModels
 {
     public class ValidTime : ValidationAttribute
     {

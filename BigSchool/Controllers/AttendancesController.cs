@@ -11,22 +11,22 @@ using System.Web.Http;
 namespace BigSchool.Controllers
 {
     [Authorize]
-    public class AttendanceController : ApiController
+    public class AttendancesController : ApiController
     {
         private ApplicationDbContext _dbContext;
-        public AttendanceController()
+        public AttendancesController()
         {
             _dbContext = new ApplicationDbContext();
         }
         [HttpPost]
-        public IHttpActionResult Attend(AttendanceDTOs attendanceDTOs)
+        public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDTOs.CourseId))
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
                 return BadRequest("The Attendance already exists!");
             var attendance = new Attendance
             {
-                CourseId = attendanceDTOs.CourseId,
+                CourseId = attendanceDto.CourseId,
                 AttendeeId = userId
             };
             _dbContext.Attendances.Add(attendance);

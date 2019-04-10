@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace BigSchool.ViewModel
+namespace BigSchool.ViewModels
 {
-    public class CourseViewModels
+    public class CourseViewModel
     {
         public int Id { get; set; }
 
@@ -32,13 +32,8 @@ namespace BigSchool.ViewModel
         }
         public DateTime GetDateTime()
         {
-            return DateTime.Parse(string.Format("{0}{1}", Date, Time));
+            return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
-
-        public IEnumerable<Course> UpcommingCourses { get; set; }
-
-        public bool ShowAction { get; set;}
-        
     }
     
 }
